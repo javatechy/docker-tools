@@ -13,6 +13,12 @@ Reference : https://docs.docker.com/samples/library/jenkins/
 Assuming /Users/deepak/jenkins-data is already created for jenkins
  * run this command `docker run -p 8080:8080 -p 50000:50000 -v /Users/deepak/jenkins-data:/var/jenkins_home jenkins`
 
+Nexus
+-----------------------------
+
+Reference : https://hub.docker.com/r/sonatype/nexus3/
+ * run this command `docker run -p 8080:8080 -p 50000:50000 -v /Users/deepak/jenkins-data:/var/jenkins_home jenkins`
+
 #### Cloning:
 Clone the project `git clone https://github.com/javatechy/fab-backend.git`
 
