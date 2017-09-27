@@ -1,10 +1,8 @@
 # Docker Tools
 This project aimed to setup tools.
 
-Jenkins:
+Assumptions:
 -----------------------------
-
-Assuming:
  * Docker is installed
 
 Jenkins
@@ -17,10 +15,5 @@ Assuming /Users/deepak/jenkins-data is already created for jenkins
 
 #### Cloning:
 Clone the project `git clone https://github.com/javatechy/fab-backend.git`
-
-Database Structure
------------------------------
-Following are created:
-* `Jenkins`: for storing users wallet balance
 
 **Note**: Relax it will work.
