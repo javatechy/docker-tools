@@ -25,23 +25,23 @@ Prometheus
 docker pull prom/prometheus
 docker run -p 9090:9090 prom/prometheus
 ```
-# Run mysql on docker
+##### Run mysql on docker
 docker run --name mysql -p 3306:3306 -v mysql-data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=1 -d mysql
 
-# Run mysql on docker
+#### Run mysql on docker
 docker run -d -p 3000:3000 -v metabase-data:/tmp -e "MB_DB_FILE=/tmp/metabase.db" --name metabase metabase/metabase
 
-# Execute a mysql 
+##### Execute a mysql
 docker exec -it mysql bash
 
-# Remove Stopped Containes
+#### Remove Stopped Containes
 docker ps -aq --no-trunc | xargs docker rm
 
-# Remove container
+#### Remove container
 docker rm 036a0bcd196c5___id
 
 
-# Install Kafka
+#### Install Kafka
 docker run -p 2181:2181 -p 9092:9092 -d --env ADVERTISED_HOST=`docker-machine ip \`docker-machine active\`` --env ADVERTISED_PORT=9092 spotify/kafka
 
 
