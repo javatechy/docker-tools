@@ -1,32 +1,3 @@
-TODO(Ticketing Service):
-✓ Freshdesk Integration
-✓ Freshdesk Webhook - Configuration
-✓ Webhook intergation with java
-✓ Database design -SQLjpa & util
-✓ Util Package move DTOs
-✓ Ticket with attachment testing
-✓ New Casa Http Client
-✓ API for conversation
-✓ tomcat configuraiton
-✓ Connection pooling 
-✓ Fetch ticket conversation
-✓ Save Phone Number of the agent in TIcketing
-✓ Add comment in a ticket - API
-✓ API to fetch List of tickets
-✓ Group assignment based on category
-✓ Booking integration with ticketing service
-✓ Booking template ID & Desc & Name
-- Configure template
-- Booking Url
-- Application Properies -  Move URL -Ticketing service
-- Add git pull while building java utils
-- Add Authentication in BookingTicketController
-- Add Authentication in CommonTicketController
-
-
-
-config.json => setup.json
-
 Technologies:
 
 Backend:
@@ -116,10 +87,3 @@ TO READ:
 	- Product level
 	- User type - admin/processsor/guest - n roles
  	- Service based access
-	
-	
-	
- - HTML
- - Javascript
- - struts 2.0
- -  Java - 8 
