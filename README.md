@@ -57,3 +57,12 @@ docker run -p 2181:2181 -p 9092:9092 -d --env ADVERTISED_HOST=`docker-machine ip
 Clone the project `git clone https://github.com/javatechy/fab-backend.git`
 
 **Note**: Relax and play Fur Elise, It will work  .
+
+
+
+
+mvn install:install-file -Dfile=../java-utils/base/target/base-0.1.jar -DgroupId=com.google.code -DartifactId=base -Dversion=0.1 -Dpackaging=jar
+mvn install:install-file -Dfile=../java-utils/sqljpa/target/sqljpa-0.1.jar -DgroupId=com.google.code -DartifactId=sqljpa -Dversion=0.1 -Dpackaging=jar
+
+
+
