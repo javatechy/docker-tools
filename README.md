@@ -53,6 +53,17 @@ docker rm 036a0bcd196c5___id
 docker run -p 2181:2181 -p 9092:9092 -d --env ADVERTISED_HOST=`docker-machine ip \`docker-machine active\`` --env ADVERTISED_PORT=9092 spotify/kafka
 ```
 
+
+####Install ES
+```
+docker run --name elasticsearch  -d -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" -v elasticsearch-data:/usr/share/elasticsearch docker.elastic.co/elasticsearch/elasticsearch:6.2.2
+```
+
+####Install Mongo
+```
+docker run --name mongo-db-container -v "$PWD"/env/mongodb/data:/data/db -d mongo
+```
+
 #### Cloning:
 Clone the project `git clone https://github.com/javatechy/fab-backend.git`
 

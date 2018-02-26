@@ -92,4 +92,6 @@ docker ps -aq --no-trunc | xargs docker rm
 https://www.digitalocean.com/community/tutorials/how-to-install-prometheus-using-docker-on-ubuntu-14-04
 https://g00glen00b.be/monitoring-spring-prometheus-grafana/
 https://prometheus.io/docs/introduction/first_steps/#installing-the-node-exporter
+https://raymondhlee.wordpress.com/2016/09/24/monitoring-spring-boot-applications-with-prometheus/
+https://raymondhlee.wordpress.com/2016/10/03/monitoring-spring-boot-applications-with-prometheus-part-2/
 
