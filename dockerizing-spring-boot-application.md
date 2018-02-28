@@ -1,39 +1,36 @@
-add logs.dir path in application.properties
+###Dockerizing Spring boot  Applicaiton
 
-add logback-spring.xml 
+add docker-maven-plugin plugin in your pom
 ```
-<?xml version="1.0" encoding="UTF-8"?>
-<configuration>
-	<include resource="org/springframework/boot/logging/logback/base.xml" />
+		    <plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<configuration>
+					<imageName>codegen</imageName>
+					<baseImage>java:8</baseImage>
+					<entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
+					<!-- copy the service's jar file from target into the root directory 
+						of the image -->
+					<resources>
+						<resource>
+							<targetPath>/</targetPath>
+							<directory>${project.build.directory}</directory>
+							<include>${project.build.finalName}.jar</include>
+						</resource>
+					</resources>
+				</configuration>
+			</plugin>
+```
 
-	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-		<layout class="ch.qos.logback.classic.PatternLayout">
-			<Pattern>%d%thread] %-5level %logger - %msg%n</Pattern>
-		</layout>
-	</appender>
 
-	<appender name="request"
-		class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${logs.dir}/application.log</file>
-		<append>true</append>
-		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<!-- <fileNamePattern>${logs.dir}/application.%d{yyyy-MM-dd}.%i.log</fileNamePattern> -->
-			<fileNamePattern>/Users/deepak/projects/fab/fab-backend/applicationlog/application.%d{yyyy-MM-dd}.%i.log</fileNamePattern> 
-			 
-			<timeBasedFileNamingAndTriggeringPolicy
-				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-				<!-- or whenever the file size reaches 100MB -->
-				<maxFileSize>200MB</maxFileSize>
-			</timeBasedFileNamingAndTriggeringPolicy>
-		</rollingPolicy>
-		<encoder>
-			<pattern>%d[%thread] %-5level %logger - %msg%n</pattern>
-		</encoder>
-	</appender>
+### Build Using this command
 
-	<root level="INFO">
-		<appender-ref ref="request" />
-	</root>
-</configuration>
+```
+mvn docker:build
+```
 
+### Run built image on docker
+
+```
+docker run -it -p {destincation_port}:${application_port} codegen
 ```
