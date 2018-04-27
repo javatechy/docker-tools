@@ -7,6 +7,8 @@ management.endpoint.prometheus.enabled=true
 management.endpoints.web.exposure.include: health,prometheus,info,metrics,threaddump
 management.metrics.export.prometheus.enabled=true
 
+# monitor all apis and exceptions
+management.metrics.web.server.requests-metric-name=alfred.api.metrics
 
 
 ## add pom changes
