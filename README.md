@@ -19,6 +19,13 @@ Nexus
 Reference : https://hub.docker.com/r/sonatype/nexus3/
  * run this command `docker run -p 8080:8080 -p 50000:50000 -v /Users/deepak/jenkins-data:/var/jenkins_home jenkins`
 
+H2 datbase
+-----------------------------
+```
+docker pull oscarfonts/h2
+docker run -d -p 1521:1521 -p 81:81 -v /Users/deepak/docker_dirs/h2_database:/opt/h2-data --name=h2_database oscarfonts/h2
+```
+Ref:  https://github.com/oscarfonts/docker-h2
 Prometheus
 ------------------
 ```
