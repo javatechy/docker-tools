@@ -41,3 +41,9 @@ find . -type f -printf '%TY-%Tm-%Td %TT %p\n' | sort -r
 ```
 git for-each-ref --format='%(color:cyan)%(authordate:format:%m/%d/%Y %I:%M %p)    %(align:25,left)%(color:yellow)%(authorname)%(end) %(color:reset)%(refname:strip=3)' --sort=authordate refs/remotes
 ```
+
+# Check Curl Response length without downloading the file
+
+```
+curl -sI http://52.66.71.241:8081/nexus/content/groups/public/org/springframework/security/spring-security-crypto/4.2.3.RELEASE/spring-security-crypto-4.2.3.RELEASE.jar | grep Content-Length
+```
