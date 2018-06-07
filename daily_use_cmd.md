@@ -27,6 +27,7 @@ for d in ./*/ ; do (cd "$d" && git pull --all); done
 # Delete old logs - older than one day
 
 ```
+find . -type f -name '*' -mtime +1 -exec rm {} \;
 for d in ./*/ ; do (cd "$d/logs" && find . -type f -name '*' -mtime +1 -exec rm {} \; ); done
 ```
 
