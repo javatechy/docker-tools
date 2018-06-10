@@ -13,6 +13,38 @@ docker run --rm --volumes-from metabase-data -v $(pwd):/backup metabase tar cvf 
 
 - https://docs.docker.com/install/linux/docker-ce/ubuntu/#upgrade-docker-after-using-the-convenience-script
 
+```
+sudo apt-get remove docker docker-engine docker.io
+sudo apt-get update
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
+ 
+ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+ 
+ sudo apt-key fingerprint 0EBFCD88
+ 
+ sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+ 
+ sudo apt-get update
+ 
+ sudo apt-get install docker-ce
+ 
+```
+#  Install Docker on mac
+
+```
+https://store.docker.com/editions/community/docker-ce-desktop-mac
+
+or 
+
+brew install docker
+```
 
 # Backup : 
 
@@ -20,17 +52,18 @@ https://github.com/loomchild/volume-backup
 
 
 ```
-
 docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.2.4
-
 docker run --name elasticsearch  -d -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" -v elasticsearch-data:/usr/share/elasticsearch docker.elastic.co/elasticsearch/elasticsearch:6.2.4
-
-docker run --name elasticsearch  -d -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" -v elasticsearch-data_1:/usr/share/elasticsearch javatechy/elasticseach_dump:1.1 
-docker exec elasticsearch sh devexport 35.154.206.110:9200 user-index
-
 ```
 
-### Creating a Dump
+### import a elastic search
+
+```
+docker run --name elasticsearch  -d -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" -v elasticsearch-data_1:/usr/share/elasticsearch javatechy/elasticseach_dump:1.1 
+docker exec elasticsearch sh devexport 35.154.206.110:9200 user-index
+```
+
+### Creating a Dump using elasticdump npm plugin
 
 ```
    elasticdump  --input=http://$SOURCE_IP/$index_name --output=http://$DESTINATION_IP/$index_name  --type=data
@@ -38,16 +71,8 @@ docker exec elasticsearch sh devexport 35.154.206.110:9200 user-index
    elasticdump  --input=http://$SOURCE_IP/$index_name --output=http://$DESTINATION_IP/$index_name  --type=analyzer
 ```
 
+## Docker file : 
 
-
-
-## Docker file 
-
-https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
-
-#### Dump ES:
-
-https://www.npmjs.com/package/elasticdump
 
 
 ```
@@ -73,6 +98,7 @@ CMD [ "elasticdump  --input=$SOURCE_SERVER/search-log-index --output=http://loca
 ### References:
 
 * https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
-* https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
 * https://www.npmjs.com/package/elasticdump
 * https://stackoverflow.com/questions/26547560/how-to-move-elasticsearch-data-from-one-server-to-another
+* https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+* Dump ES: https://www.npmjs.com/package/elasticdump
