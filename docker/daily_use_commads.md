@@ -1,6 +1,34 @@
 ## Remove a docker image:
 
+# Docker login
+
+```
+docker login -u javatechy
+```
+
+# Remove and image
+
 ```
 docker rmi image_name
 ```
 
+# Remove all stopped container
+
+```
+docker rm $( docker ps -q -f status=exited)
+```
+
+# Prune Command
+
+```
+docker container prune   # Remove all stopped containers
+docker volume prune      # Remove all unused volumes
+docker image prune       # Remove unused images
+docker system prune      # All of the above, in this order: containers, volumes, images
+```
+
+# Show docker disk usage, including space reclaimable by pruning
+
+```
+docker system df
+```
