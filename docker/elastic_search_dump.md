@@ -7,8 +7,6 @@ docker volume rm Remove one or more volumes
 docker run --rm --volumes-from metabase-data -v $(pwd):/backup metabase tar cvf /backup/backup.tar /metabasedata
 ```
 
-
-
 #  Install Docker on ubuntu
 
 - https://docs.docker.com/install/linux/docker-ce/ubuntu/#upgrade-docker-after-using-the-convenience-script
