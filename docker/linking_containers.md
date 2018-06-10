@@ -1,19 +1,19 @@
 
 # Linking Containers
 
-- Run redis in detached mode
-docker run -d --name redis1 redis
+- Run redis in detached mode (-d)
 
+```
+docker run -d --name redis1 redis
+```
 Now we will try to access this redis from another container.
 
-# linking
-
+# linking one contianer to another
 
 ```
 docker run -it --link redis1:redis --name redisclient1 busybox
 ```
-
-— link flag is sourcecontainername:containeraliasname
+Note: — link flag is sourcecontainername:containeraliasname
 
 above launch of container (redisclient1) will lead you to the shell prompt.
 
@@ -59,16 +59,20 @@ TERM='xterm'
 _='set'
 ```
 
-Now create another redis container (client) to access old redis server contianer.
+Now create another redis container (client) to access old redis server container.
 
+```
 docker run -it --link redis1:redis --name client1 redis sh
+```
 
- --  `redis` is alias for old resdis server. 
+ --`redis` is alias for old redis server. 
+
+Got inside the new container and execute
+
+```
 redis-cli -h redis
+```
 
+# Reference:
 
-
-
-Reference:
-
-https://rominirani.com/docker-tutorial-series-part-8-linking-containers-69a4e5bf50fb
+* https://rominirani.com/docker-tutorial-series-part-8-linking-containers-69a4e5bf50fb

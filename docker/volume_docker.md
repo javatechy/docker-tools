@@ -17,7 +17,10 @@ Steps:
 
 * Volume attached to busybox 
 
+```
 docker run -it -v /datadeepak --name sample_container  busybox
+```
+
 * it will create a voulme inside datadeepak
 Now even if the container dies data will remain the same
 create a file inside /datadeepak and create a sample file.
@@ -29,21 +32,28 @@ U will find the same data again insdie the datadeepak folder.
 
 # Check location of this volume 
 
+```
 docker inspect sample_container
+```
 
 # Check all volumes
 
+```
 docker volume ls
+```
 
 # Remove all volumes/images/container
-docker rm --help
 
+```
+docker rm --help
+```
 
 # -v Option
 To mount a host volume while launching a Docker container, we have to use the following format for volume -v :
 
+```
 -v HostFolder:ContainerVolumeName
-
+```
 
 # Mapping a volume from host machine to container
 
@@ -62,9 +72,10 @@ or vice versa
 # Data volume containers
 if you want to share data between containers or you want to use the data from non-persistent containers. The process is really two step:
 
+```
 $ docker run -it -v /data --name container1 busybox
 $ docker run -it --volumes-from container1 --name container2 busybox
 $ docker run -it --volumes-from container1 --name container3 busybox
 $ docker run -it --volumes-from container1 --name container4 busybox
-
+```
 

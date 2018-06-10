@@ -1,12 +1,16 @@
 # intro
 A Dockerfile is a text file that has a series of instructions on how to build your image
 
-Supported Commands:
+###Supported Commands:
 
- set of commands t
- FROM, CMD, ENTRYPOINT, VOLUME, ENV etc.
+Set of commands:
+
+```
+FROM, CMD, ENTRYPOINT, VOLUME, ENV etc.
+```
+
+### Steps:
  
- Steps: 
  * create  a file named `Dockerfile` for docker instructions.
  * Sample  codes:
 
@@ -17,11 +21,14 @@ CMD ["date"]
 EXPOSE 80
 ```
 
-  FROM command sets the base image for the rest of the instructions. 
-  MAINTAINER :  author of the generated image
-  CMD ":if you want to execute a custom command after instruction.
-  EXPOSE:  EXPOSE command here to inform what port the container will be listening on. Remember in our earlier chapters, we saw that if we use the -P command, then the EXPOSE port will be used by default.
-  Build Image:
+ *  ** FROM ** : command sets the base image for the rest of the instructions. 
+ *  ** MAINTAINER ** :  author of the generated image
+ *  **  CMD ** :if you want to execute a custom command after instruction.
+ *  **  EXPOSE ** :  EXPOSE command here to inform what port the container will be listening on. 
+ 
+ Remember in our earlier chapters, we saw that if we use the -P command, then the EXPOSE port will be used by default.
+  
+### Build Image:
  
   ```
   docker build -t myimage:/version/ .
@@ -55,8 +62,7 @@ Thu Dec 14 11:14:42 UTC 2017
  ```
  docker run -it myimage
  ```
- 
- 
+
  
  References:
  * https://rominirani.com/docker-tutorial-series-writing-a-dockerfile-ce5746617cd
