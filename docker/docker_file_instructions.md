@@ -52,7 +52,8 @@ Thu Dec 14 11:14:42 UTC 2017
  docker run -d -p 80:80 --name webserver myimage
  ```
  
- Check all created images:
+ # Check all created images:
+ 
  ```
   docker images
  ```
