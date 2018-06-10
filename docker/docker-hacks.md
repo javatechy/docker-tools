@@ -59,8 +59,10 @@ $docker tag my_image $DOCKER_ID_USER/my_image
 
 Push your image to Docker Hub using docker push (making the same replacements as in the previous step).
 
+```
 docker push $DOCKER_ID_USER/my_image
- 
+```
+
 ```
 docker tag codegen javatechy/codegen
 docker push javatechy/codegen
