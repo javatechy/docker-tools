@@ -35,7 +35,7 @@ docker run -d --name MyWebServer -P httpd
 * --name :  name of the container
 * -P. What this parameter does is that it “Publish all exposed ports to random ports”
 
-# Port Mapping: 
+#  Port Mapping: 
 
 -p HostPort:ContainerPort
  
