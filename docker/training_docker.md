@@ -3,15 +3,12 @@
 
 # Installation:
 
-✓ Ubuntu: https://docs.docker.com/install/linux/docker-ce/ubuntu/#upgrade-docker-after-using-the-convenience-script
-✓ Mac https://store.docker.com/editions/community/docker-ce-desktop-mac
+- Ubuntu: https://docs.docker.com/install/linux/docker-ce/ubuntu/#upgrade-docker-after-using-the-convenience-script
+- Mac https://store.docker.com/editions/community/docker-ce-desktop-mac
 - create your account on https://hub.docker.com/
-✓ Play your game here :https://labs.play-with-docker.com/
-
-https://www.tutorialspoint.com/docker/images/various_layers.jpg
-
-- Test Cases - env basedwifi_fab!
-- wifi_fab!
+- Play your game here :https://labs.play-with-docker.com/
+- https://www.tutorialspoint.com/docker/images/various_layers.jpg
+- Test Cases - env based
 
 # Images:
  
@@ -95,8 +92,9 @@ $ docker run -it --volumes-from container1 --name container4 busybox
 
 # Build Your own image:
 
+```
 FROM busybox:latest
-MAINTAINER Deepak Kumar (deepak.kumar@fabhotels.com)
+MAINTAINER Deepak Kumar (deepak.kumar.iet@gmail.com)
 CMD ["date"]
 EXPOSE 80
 
@@ -105,6 +103,7 @@ docker run -it myimage
 docker run -d -p 80:80 --name webserver myimage
 docker images
 docker run -it myimage
+ ```
  
 # Dockerizing Spring boot:
  - Mention repository
