@@ -84,11 +84,13 @@ $ docker run -it --volumes-from container1 --name container4 busybox
 
 # Linking Containers:
 
-- docker run -d --name redis1 redis
-- docker run -it --link redis1:redis --name redisclient1 busybox
-- cat /etc/hosts
-- docker run -it --link redis1:redis --name client1 redis sh
-- redis-cli -h redis
+```
+ docker run -d --name redis1 redis
+ docker run -it --link redis1:redis --name redisclient1 busybox
+ cat /etc/hosts
+ docker run -it --link redis1:redis --name client1 redis sh
+ redis-cli -h redis
+```
 
 # Build Your own image:
 
