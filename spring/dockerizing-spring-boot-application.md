@@ -1,6 +1,7 @@
 ###Dockerizing Spring boot  Applicaiton
 
 add docker-maven-plugin plugin in your pom
+
 ```
 		    <plugin>
 				<groupId>com.spotify</groupId>
