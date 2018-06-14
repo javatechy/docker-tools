@@ -39,12 +39,8 @@
 
 - docker run --name elasticsearch  -d -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" -v elasticsearch-data_1:/usr/share/elasticsearch javatechy/elastdump:1.0
 - docker exec elasticsearch sh export $SOURCE_SERVER:9200 user-index
-
-
-docker run -it -p 5600:5601 --name kibana --link elasticsearch:elasticsearch  docker.elastic.co/kibana/kibana:6.2.4
-
-
-docker exec elasticsearch sh devexport http://35.154.206.110:9200 user-index,
+- docker run -it -p 5600:5601 --name kibana --link elasticsearch:elasticsearch  docker.elastic.co/kibana/kibana:6.2.4
+- docker exec elasticsearch sh devexport http://SOURCE_IP:9200 user-index,
 - jenkins etc.
 
 - docker run --name mysql -p 3306:3306 -v mysql-data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=1 -d mysql
