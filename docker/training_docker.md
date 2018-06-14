@@ -107,6 +107,8 @@ docker run -it myimage
  - Mention repository
  - Docker file and Wrapper.
  - Ref http://www.mojohaus.org/properties-maven-plugin/
+ - Skip Building images: `mvn clean install -Ddocker.skip`
+ - More commands on https://dmp.fabric8.io/ 
 
 # Dockerizing FabHotelier Spring Apps:
  
@@ -118,9 +120,9 @@ docker run -it myimage
 
 ```
 ###.  Run a docker images
-docker run -it -v /var/log/casa:/var/log/casa -p 9000:8000 -e ENV_NAME=local 425123548659.dkr.ecr.ap-south-1.amazonaws.com/hotelier:1.0 --rm
+docker run -it -v /var/log/casa:/var/log/casa -p 9000:8000 -e ENV_NAME=local XXXXX.dkr.ecr.ap-south-1.amazonaws.com/hotelier:1.0 --rm
 
-docker run -it -v /var/log/casa:/var/log/casa -p 9000:8000 -e ENV_NAME=dev -d 425123548659.dkr.ecr.ap-south-1.amazonaws.com/hotelier:1.0
+docker run -it -v /var/log/casa:/var/log/casa -p 9000:8000 -e ENV_NAME=dev -d xxxx.dkr.ecr.ap-south-1.amazonaws.com/hotelier:1.0
 
 docker run -it -v /var/log/casa:/var/log/casa -e ENV_NAME=local -p 9000:8000 javatechy/dockboot:1.0
 ```
@@ -137,3 +139,5 @@ docker run -it -v /var/log/casa:/var/log/casa -e ENV_NAME=local -p 9000:8000 jav
 
 # Prune:
 - Prune Commands -  docker system df
+
+
