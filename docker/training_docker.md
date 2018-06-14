@@ -1,8 +1,7 @@
 # Introduction:
 - Docker - Container service CE & EE and Container VS. VMs
- 
- Now hotelier is running on Docker on Dev ENV. Please let me know if something is not working @Hasrh
-Installation:
+
+# Installation:
 
 ✓ Ubuntu: https://docs.docker.com/install/linux/docker-ce/ubuntu/#upgrade-docker-after-using-the-convenience-script
 ✓ Mac https://store.docker.com/editions/community/docker-ce-desktop-mac
