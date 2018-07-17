@@ -38,7 +38,7 @@ alias c='clear'
 ```
 
 
-or
+# ** OR **
  
 ```
 export PATH=$PATH:~/bin:~/Library/Python/3.6/bin
@@ -76,6 +76,9 @@ source ~/.profile
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_144, x86_64`
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_144, x86_64`
 ```
+
+Use monokai theme https://github.com/stephenway/monokai.terminal
+
 ###### **Reference**
  
 * http://osxdaily.com/2013/02/05/improve-terminal-appearance-mac-os-x/
