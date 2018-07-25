@@ -34,9 +34,9 @@ docker run -p 9090:9090 prom/prometheus
 ```
 ##### Run mysql on docker
 ```
-docker run --name mysql -p 3306:3306 -v mysql-data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=1 -d mysql
+docker run --name mysql -p 3305:3306 -v /Users/deepak/docker_dirs/mysql-data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=1 -d mysql
 ```
-#### Run mysql on docker
+#### Run metabase on docker
 ```
 docker run -d -p 3000:3000 -v metabase-data:/tmp -e "MB_DB_FILE=/tmp/metabase.db" --name metabase metabase/metabase
 ```
