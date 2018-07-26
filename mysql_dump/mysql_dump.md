@@ -1,9 +1,21 @@
-
-Dumping mysql 
+### mysqldump command 
 
 ```
 mysqldump --column-statistics=0 --single-transaction -h 35.154.206.110 -P 3306 -u fabreadwrite -p'HsxmfL$5H6L$$_cD' --databases user_microservice > dump.sql
 ```
+### Using Docker Run
+
+```
+docker run --name mysql -p 6306:3306 -v /Users/deepak/docker_dirs/mysql-data:/var/lib/mysql --env-file ./vars.env -d javatechy/mysql_dump
+```
+
+### Start Export using this command
+
+```
+docker exec mysql sh export
+```
+
+### Using Docker Compose 
 
 use this docker compose file
 
