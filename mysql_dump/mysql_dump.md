@@ -5,6 +5,7 @@ mysqldump --column-statistics=0 --single-transaction -h 35.154.206.110 -P 3306 -
 ```
 ### Using Docker Run
 
+
 ```
 docker run --name mysql -p 6306:3306 -v /Users/deepak/docker_dirs/mysql-data:/var/lib/mysql --env-file ./vars.env -d javatechy/mysql_dump
 ```
