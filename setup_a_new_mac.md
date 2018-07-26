@@ -7,6 +7,12 @@
 https://macromates.com/download
 
 
+### install Xcode
+
+```
+xcode-select --install
+```
+
 ### Node Installation
 
 

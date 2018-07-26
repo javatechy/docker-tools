@@ -1,0 +1,30 @@
+
+Dumping mysql 
+
+```
+mysqldump --column-statistics=0 --single-transaction -h 35.154.206.110 -P 3306 -u fabreadwrite -p'HsxmfL$5H6L$$_cD' --databases user_microservice > dump.sql
+```
+
+use this docker compose file
+
+```
+version: '2'
+ 
+services:
+  mysql:
+    image: javatechy/mysql_dump
+    container_name: mysql
+    ports:
+      - 6306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: "1"
+      SOURCE_MYSQL_IP: "35.154.206.110"
+      SOURCE_MYSQL_PORT: "3306"
+      SOURCE_MYSQL_PASSWORD: "HsxmfL$$5H6L$$$$_cD"
+      DATABASES_LIST: "user_microservice"
+      EXTRA_ARGS: ""
+    command:
+     - dump_mysql
+    volumes:
+      - /users/deepak/docker_dirs/mysql-data:/var/lib/mysql
+```
