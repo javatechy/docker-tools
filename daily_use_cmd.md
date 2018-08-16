@@ -9,6 +9,13 @@ find . -type f -name '*' -mtime +1 -exec rm {} \;
 df -H
 ```
 
+# Check groups in linux
+
+```
+$> groups
+cat /etc/
+```
+
 
 # top 10 dirs in linux 
 ```
@@ -47,4 +54,16 @@ git for-each-ref --format='%(color:cyan)%(authordate:format:%m/%d/%Y %I:%M %p)  
 
 ```
 curl -sI http://52.66.71.241:8081/nexus/content/groups/public/org/springframework/security/spring-security-crypto/4.2.3.RELEASE/spring-security-crypto-4.2.3.RELEASE.jar | grep Content-Length
+```
+
+# Changing permissions
+
+```
+sudo chown -R user:group /home/ubuntu/dev/*
+```
+
+####  Commands
+
+```
+ps -ef | grep 'fabuser' | cut -d " " -f6 | head -1
 ```

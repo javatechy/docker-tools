@@ -1,0 +1,49 @@
+{
+
+	"containerDefinitions": [
+		{
+			"logConfiguration": {
+				"logDriver": "awslogs",
+				"options": {
+					"awslogs-group": "docker_log_group",
+					"awslogs-region": "ap-south-1",
+					"awslogs-create-group": "true",
+					"awslogs-stream-prefix": "dockboot"
+				}
+			},
+			"portMappings": [
+				{
+					"hostPort": 80,
+					"protocol": "tcp",
+					"containerPort": 8000
+				}
+			],
+			"cpu": 0,
+			"environment": [
+				{
+					"name": "env",
+					"value": "dev"
+				}
+			],
+			"mountPoints": [
+
+			],
+			"memory": 256,
+			"volumesFrom": [
+
+			],
+			"image": "XXXX.dkr.ecr.ap-south-1.amazonaws.com/dockboot:1.7",
+			"essential": true,
+			"readonlyRootFilesystem": false,
+			"name": "docker_boot_container_ecs"
+		}
+	],
+	"placementConstraints": [
+
+	],
+	"family": "docker_ecs_app_image",
+	"networkMode": "bridge",
+	"volumes": [
+
+	]
+}
