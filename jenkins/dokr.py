@@ -63,7 +63,7 @@ def cleanUp():
 
 def helper():
     print('\n------------------------ Command Options ------------------------')
-    print('\ndokr clean # delete old images')
+    print('\ndokr clean searchPattern # delete old images matching pattern')
     print('\ndokr lecs # ECS login')
     print('\ndokr tag searchPattern tagName # add a tag *tagName*on a image matching *searchPattern* ')
     print('\ndokr push searchPattern  # push all images matching the pattern')
