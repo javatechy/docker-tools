@@ -56,10 +56,15 @@ def loginEcs():
 
 def cleanUp():
     searchPattern = sys.argv[2];
-    print('Cleaning Old Images  matching pattern ', searchPattern)
+    print('\nCleaning Old Images  matching pattern ', searchPattern)
+    print('\n----------  Cleaning Old Images ---- \n')
     cleaner = cmdExec("docker images -a | grep " + searchPattern + " | awk '{print $3}' | xargs docker rmi -f")
-    print(' ----------  Cleaning Old Images ---- \n', cleaner)
+    print(cleaner)
 
+def cleanAll():
+    print('\nCleaning docker system ')
+    cleaner = cmdExec("docker system -a -f")
+    print(cleaner)
 
 def helper():
     print('\n------------------------ Command Options ------------------------')
@@ -73,6 +78,7 @@ def helper():
 def switch(arg):
     function_dict = {
         'clean' : cleanUp,
+        'clean-all' : cleanUp,
         'lecs' :loginEcs,
         'tag': addBuildTag,
         'push': pushImage,
