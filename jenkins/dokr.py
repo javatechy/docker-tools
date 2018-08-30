@@ -2,7 +2,6 @@
 
 import sys
 import os
-from curses.ascii import NUL
 
 
 def cmdExec(str):
@@ -14,65 +13,72 @@ def joinMe(stringList):
 
 
 def addBuildTag():
-    throwException(sys.argv[2], 'Cannot push image. Search pattern is missing')
-    throwException(sys.argv[3], 'Cannot push image. Tag Name  is missing')
     searchPattern = sys.argv[2];
     tagName = sys.argv[3];
-    print ('Searching pattern:', searchPattern + 'adding tag ' + tagName)
+    print ('\nSearching pattern: *', searchPattern + '* and adding tag ' + tagName)
     imageName = cmdExec("docker images | cut -d ' '  -f1 | grep " + searchPattern + " | head -1");
-    print('image name is ' , imageName)
+    print('\nFound this image name from the given pattern ' , imageName)
     addTagCommand = joinMe(['docker tag ' , imageName , ' ' , imageName , ':', tagName ]);
-    cmdExec(addTagCommand);
-    print('tag command ' + addTagCommand)
-
-
-def throwException(inputString, message):
-    if not inputString.strip():
-        raise Exception(message + 'Use dokr help option')
+    print('\nExecuting tag command : \n' + addTagCommand)
+    print(cmdExec(addTagCommand));
+    print('\nAdded Tag : '  + tagName + ' into the images\n')
+    print(cmdExec('docker images'))
+   
 
   
-def pushAll():
+def pushImage():
     searchPattern = sys.argv[2];
-    throwException(searchPattern, 'Cannot push image. Search pattern is missing')
+    print('\nPushing images matching pattern ', searchPattern)
+    
     imageName = cmdExec("docker images | cut -d ' '  -f1 | grep " + searchPattern + " | head -1");
-    print('image name is ' , imageName)
+    
+    print('\nFound this image name from the given pattern ' , imageName)
+    
     imageListStr = "docker image inspect -f '{{join .RepoTags \"\\n\" }}' " + imageName;
     imageList = cmdExec(imageListStr)
-    print('tag imageListStr ' + imageList)
+    
+    print('\nFound Following images : \n\n' + imageList)
+    
     tagList = cmdExec(imageListStr).split("\n")
+    
+    print('\nTotal Tags found :' , len(tagList))
+    
     for tag in tagList:
-        print('--------------------------Pushing image :' + tag + '-----------------------------------')
-        cmdExec('docker push ' + tag)
+        print('\n--------------------------Pushing image :' + tag + '-----------------------------------')
+        print(cmdExec('docker push ' + tag))
 
 
 def loginEcs():
-    login = cmdExec("eval $(aws ecr get-login   | sed  's/-e none//g')")
-    print('Logining into aws ', login)
-
+    login = cmdExec("aws ecr get-login   | sed  's/-e none//g'")
+    print('\n----------  Logining into aws  ----------  \n\n', login + '\n')
+    print(cmdExec(login))
+    
 
 def cleanUp():
     searchPattern = sys.argv[2];
-    throwException(searchPattern, 'Cannot delete images. Search pattern is missing')
-    login = cmdExec("docker images -a | grep " + searchPattern + " | awk '{print $3}' | xargs docker rmi -f")
-    print('Logining into aws ', login)
+    print('Cleaning Old Images  matching pattern ', searchPattern)
+    cleaner = cmdExec("docker images -a | grep " + searchPattern + " | awk '{print $3}' | xargs docker rmi -f")
+    print(' ----------  Cleaning Old Images ---- \n', cleaner)
 
 
-def validateCliArgs(index, message):
-    if index < len(sys.argv):
-        raise Exception(message + 'Use dokr help option')
+def helper():
+    print('\n------------------------ Command Options ------------------------')
+    print('\ndokr clean # delete old images')
+    print('\ndokr lecs # ECS login')
+    print('\ndokr tag searchPattern tagName # add a tag *tagName*on a image matching *searchPattern* ')
+    print('\ndokr push searchPattern  # push all images matching the pattern')
+    print('\n')
 
-
+    
 def switch(arg):
     function_dict = {
         'clean' : cleanUp,
         'lecs' :loginEcs,
         'tag': addBuildTag,
-        'pa': pushAll
+        'push': pushImage,
+        'help' : helper
         }
     return function_dict[arg]
 
 
-print(len(sys.argv))
-throwException(sys.argv[1], 'Please enter a valid command.')
-arg1 = sys.argv[1]
 switch(sys.argv[1])()
