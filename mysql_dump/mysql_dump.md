@@ -41,3 +41,16 @@ services:
     volumes:
       - /users/deepak/docker_dirs/mysql-data:/var/lib/mysql
 ```
+
+#### Taking a dump
+
+```
+mysqldump --column-statistics=0 --single-transaction -h docker.for.mac.localhost -P 3306 -u username -p'PASSWORD' --all-databases > dump.sql
+```
+
+
+#### Using ENV variables
+
+```
+docker run --name mysql -p 6306:3306 -v /Users/deepak/docker_dirs/mysql-data:/var/lib/mysql --env-file /Users/deepak/projects/dock_compose/mysql/vars.env -d javatechy/mysql_dump
+```

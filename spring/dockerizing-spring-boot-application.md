@@ -35,3 +35,19 @@ mvn docker:build
 ```
 docker run -it -p {destincation_port}:${application_port} codegen
 ```
+
+
+#### Helpful links
+
+
+Skip Building images:
+ mvn clean install -Ddocker.skip
+
+More commands on
+- https://dmp.fabric8.io/
+
+http://www.mojohaus.org/properties-maven-plugin/
+
+#### docker default IPs:
+
+172.17.0.1/8 

@@ -14,11 +14,15 @@ docker push XXXX.dkr.ecr.ap-south-1.amazonaws.com/openjdk-8-slim
 
 ```
 
-To dump 2.4 version, use
+### To dump 2.4 version, use
 
 ```
 docker run --name elasticsearch  -d -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" -v elasticsearch-data:/usr/share/elasticsearch elasticsearch:2.4
+
 ```
+
+Note : To copy nodes data from your local to ES use docker cp command.
+
 
 
 # Links :
