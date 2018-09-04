@@ -29,27 +29,36 @@ https://www.npmjs.com/package/elasticdump
 
 
 
-Docker file 
+# Docker file 
 
 https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
 
-- Dump ES:
+#  Dump ES:
 
 https://www.npmjs.com/package/elasticdump
 
 
-715186ce24ff4c44b4c60ef51d900f17
-
-
-Creaitng Docker file:
+#  Creaitng Docker file:
 https://rominirani.com/docker-tutorial-series-writing-a-dockerfile-ce5746617cd
 https://www.npmjs.com/package/elasticdump
 https://springframework.guru/docker-cheat-sheet-for-spring-devlopers/
 
 
-Graphite :
+# Graphite :
 
 docker run -d --name graphite  -p 8081:80  -p 2003:2003 sitespeedio/graphite
 docker run -d  --name graphite -p 8081:80 -p 2003:2003 -v /Users/deepak/docker_dirs/graphite/.htpasswd:/etc/nginx/.htpasswd -v /Users/deepak/docker_dirs/graphite/storage/whisper:/opt/graphite/storage/whisper  -v /Users/deepak/docker_dirs/graphite/storage-schemas.conf:/opt/graphite/conf/storage-schemas.conf sitespeedio/graphite
+
+#  New Relic integration:
+ https://discuss.newrelic.com/t/need-help-using-new-relic-with-spring-boot-docker/53521/4
+ http://central.maven.org/maven2/com/newrelic/agent/java/newrelic-java/4.4.0/newrelic-java-4.4.0.zip
   
+ ## Gerrit
+  
+ docker run \
+         -e MIGRATE_TO_NOTEDB_OFFLINE=1 \
+         -v ~/gerrit_volume:/var/gerrit/review_site \
+         -p 8099:8080 \
+         -p 29418:29418 \
+         -d openfrontier/gerrit
  
