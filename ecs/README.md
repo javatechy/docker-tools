@@ -1,4 +1,4 @@
-STEPS:
+### STEPS:
   - Create Cluster
   	- ECS -> create cluster -> Confiure cluster -> 
 		- give name + Select vpc + select 2 subnets + secutiry groups 
@@ -60,6 +60,11 @@ STEPS:
 ### Cluster
 ECS cluster are region specific
 can have different type of machines
+
+#### Task: Configuration Setting of how a container should run
+
+https://www.youtube.com/watch?v=_ep_yKuDWkE
+
 
 ###.  Create a repositry from CLI
 aws ecr create-repository --repository-name hotelier
