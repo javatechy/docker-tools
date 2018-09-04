@@ -62,3 +62,6 @@ docker run -d  --name graphite -p 8081:80 -p 2003:2003 -v /Users/deepak/docker_d
          -p 29418:29418 \
          -d openfrontier/gerrit
  
+### Backup :
+https://github.com/loomchild/volume-backup
+ 

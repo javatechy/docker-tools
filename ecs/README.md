@@ -60,6 +60,10 @@ STEPS:
 ### Cluster
 ECS cluster are region specific
 can have different type of machines
+
+###.  Create a repositry from CLI
+aws ecr create-repository --repository-name hotelier
+
  
 ### AWS ECS Reference:
 

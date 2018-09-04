@@ -67,3 +67,7 @@ sudo chown -R user:group /home/ubuntu/dev/*
 ```
 ps -ef | grep 'fabuser' | cut -d " " -f6 | head -1
 ```
+
+### File Permissions
+
+http://www.filepermissions.com/file-permission/555

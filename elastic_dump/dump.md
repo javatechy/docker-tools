@@ -30,3 +30,5 @@ Note : To copy nodes data from your local to ES use docker cp command.
 - https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
 
 - https://www.npmjs.com/package/elasticdump
+
+- https://stackoverflow.com/questions/26547560/how-to-move-elasticsearch-data-from-one-server-to-another

@@ -48,6 +48,13 @@ services:
 mysqldump --column-statistics=0 --single-transaction -h docker.for.mac.localhost -P 3306 -u username -p'PASSWORD' --all-databases > dump.sql
 ```
 
+### PRIVILEGES :
+
+```
+GRANT ALL PRIVILEGES ON *.* TO 'fabreadwrite'@'%' IDENTIFIED BY 'HsxmfL$5H6L$$_cD';
+FLUSH PRIVILEGES;
+```
+
 
 #### Using ENV variables
 
