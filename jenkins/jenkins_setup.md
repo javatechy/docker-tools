@@ -23,13 +23,12 @@ sudo systemctl enable jenkins.service
 
 cat /var/lib/jenkins/secrets/initialAdminPassword
 
-#### Plugins You Need: 
-
-
 #### Install aws cli & Configure:
 
-
-	
+```
+apt install awscli
+aws configure
+```
 
 #### Pip Packages:
 
