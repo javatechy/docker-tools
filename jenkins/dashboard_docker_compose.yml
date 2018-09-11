@@ -7,8 +7,6 @@ services:
      - "9118:9118"
    environment:
      - JENKINS_SERVER=http://XXX.XXX.XX.XX:8080
-     - VIRTUAL_PORT=9118
-     - DEBUG=0
      - JENKINS_USER=admin
      - JENKINS_PASSWORD=admin
    
