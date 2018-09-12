@@ -69,11 +69,17 @@ https://www.youtube.com/watch?v=_ep_yKuDWkE
 ###.  Create a repositry from CLI
 aws ecr create-repository --repository-name hotelier
 
- 
 ### AWS ECS Reference:
 
-https://medium.com/boltops/gentle-introduction-to-how-aws-ecs-works-with-example-tutorial-cea3d27ce63d
++ https://medium.com/boltops/gentle-introduction-to-how-aws-ecs-works-with-example-tutorial-cea3d27ce63d
 
-https://gist.github.com/duluca/ebcf98923f733a1fdb6682f111b1a832
++ https://gist.github.com/duluca/ebcf98923f733a1fdb6682f111b1a832
+
+### Helpful Blogs:
+
++ https://convox.com/blog/ecs-challenges/
++ https://news.ycombinator.com/item?id=11598058
++ https://www.allthingsdistributed.com/2015/07/under-the-hood-of-the-amazon-ec2-container-service.html
++ https://medium.com/@arnaud.koster/how-to-deploy-and-scale-your-app-in-minutes-with-containers-and-aws-ecs-e49dae446928
 
  
