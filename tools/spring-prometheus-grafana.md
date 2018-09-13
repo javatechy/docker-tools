@@ -82,10 +82,11 @@ In this section, we will install the Prometheus Node Exporter. The Node Exporter
 wget https://github.com/prometheus/node_exporter/releases/download/v0.15.2/node_exporter-0.15.2.darwin-amd64.tar.gz
 
 5. Setting grafana
+
 ```
-docker run -d -p 3000:3000 -e "GF_SECURITY_ADMIN_PASSWORD=password" -v ~/grafana_db:/var/lib/grafana grafana/grafana
+docker run -d -p 3000:3000 -e "GF_SECURITY_ADMIN_PASSWORD=password" -v /Users/deepak/docker_dirs/grafana:/var/lib/grafana grafana/grafana
 ```
-docker ps -aq --no-trunc | xargs docker rm
+
 
 ####References:
 
