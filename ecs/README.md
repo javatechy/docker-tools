@@ -3,7 +3,6 @@
   	- ECS -> create cluster -> Confiure cluster -> 
 		- give name + Select vpc + select 2 subnets + secutiry groups 
 		- Press create 
-		
 	- Create Task instance
 	    - name the container - 
 		- select network mode bridge
