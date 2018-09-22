@@ -51,7 +51,7 @@ mysqldump --column-statistics=0 --single-transaction -h docker.for.mac.localhost
 ### PRIVILEGES :
 
 ```
-GRANT ALL PRIVILEGES ON *.* TO 'fabreadwrite'@'%' IDENTIFIED BY 'HsxmfL$5H6L$$_cD';
+GRANT ALL PRIVILEGES ON *.* TO 'username'@'%' IDENTIFIED BY 'PWD';
 FLUSH PRIVILEGES;
 ```
 
