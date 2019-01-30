@@ -22,6 +22,11 @@ cat /etc/
 du -hs / | sort -n -r | head -n 10
 ```
 
+# Make a tab seperated file to CSV
+```
+cat data.txt | tr '\t' , > data.csv
+cat data.txt | cut -f3 # print column 3 if file is tab seperated
+```
 
 # Checkout develop branch recurisvly
 
