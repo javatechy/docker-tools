@@ -12,3 +12,11 @@ git stash pop
 git merge master
 ```
 And resolve the conflicts one by one shown after above merging command.
+
+### Overwrite single file in my current branch with the same file in the master branch
+
+```
+git checkout master path/to/default.aspx.cs
+
+```
+So, just `git checkout FROM_BRANCH_NAME path/to/file`
