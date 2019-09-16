@@ -1,7 +1,0 @@
-### git move uncommitted changes to existing branch
-
-```
-git stash
-git checkout other-branch
-git stash pop
-```
