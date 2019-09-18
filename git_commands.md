@@ -20,3 +20,10 @@ git checkout master path/to/default.aspx.cs
 
 ```
 So, just `git checkout FROM_BRANCH_NAME path/to/file`
+
+### Git Get the last commits
+
+```
+git log
+git log --oneline
+```
