@@ -3,7 +3,7 @@
 
 ```
 git fetch --all
-git checkout <branch_name>
+git checkout --track origin/users/branch_name
 ```
 
 ### git move uncommitted changes to existing branch
