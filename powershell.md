@@ -20,5 +20,5 @@ $env:ENV_VARIABLE_NAME
 ## Robocopy in powershell
 
 ```
-robocopy.exe /MT:64 /MIR E:\spo D:\spo *.*
+robocopy.exe /MT:64 /MIR E:\source_dir D:\destination_dir *.*
 ```
