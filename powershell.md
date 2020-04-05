@@ -1,14 +1,24 @@
-# Showing a meesage in popup
+## Showing a meesage in popup
 
 ```
 $wshell = New-Object -ComObject Wscript.Shell
 $Output = $wshell.Popup("The report generation script is successfully completed!")
 ```
 
-# Get all env variables
+## Get all env variables
 
+```
 gci env:* | sort-object name
+```
 
-# Get a single env value
+## Get a single env value
 
+```
 $env:ENV_VARIABLE_NAME
+```
+
+## Robocopy in powershell
+
+```
+robocopy.exe /MT:64 /MIR E:\spo D:\spo *.*
+```
