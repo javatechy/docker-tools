@@ -22,3 +22,13 @@ $env:ENV_VARIABLE_NAME
 ```
 robocopy.exe /MT:64 /MIR E:\source_dir D:\destination_dir *.*
 ```
+
+## Find Remove all content except the matching pattern line and find the unique
+
+Below command will remove all lines which doesn't contain `ContentClass`
+
+```
+$SourceFile = 'response_all_items.json'
+$Pattern = 'ContentClass'
+(Get-Content $SourceFile) | Where-Object { $_ -match $Pattern } | Sort-Object | Get-Unique | Set-Content $SourceFile
+```
