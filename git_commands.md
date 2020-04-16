@@ -35,3 +35,15 @@ So, just `git checkout FROM_BRANCH_NAME path/to/file`
 git log
 git log --oneline
 ```
+
+### Merge only few files from one branch into another
+
+In this example we are taking changes from twitter_integration to master branch
+```
+$ git branch
+* master
+  twitter_integration
+
+$ git checkout twitter_integration app/models/avatar.rb db/migrate/20090223104419_create_avatars.rb test/unit/models/avatar_test.rb test/functional/models/avatar_test.rb
+```
+https://jasonrudolph.com/blog/2009/02/25/git-tip-how-to-merge-specific-files-from-another-branch/
