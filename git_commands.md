@@ -38,7 +38,7 @@ git log --oneline
 ### Apply a Git patch(.diff/.patch file)
 
 ```
-git apply --reject --whitespace=fix "C:\Users\deekumar\Downloads\SampleOnboxGWS (1).diff"
+git apply --reject --whitespace=fix "C:\Users\deekumar\Downloads\Sample.diff"
 ```
 
 ### Merge only few files from one branch into another
