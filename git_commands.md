@@ -35,6 +35,11 @@ So, just `git checkout FROM_BRANCH_NAME path/to/file`
 git log
 git log --oneline
 ```
+### Apply a Git patch(.diff/.patch file)
+
+```
+git apply --reject --whitespace=fix "C:\Users\deekumar\Downloads\SampleOnboxGWS (1).diff"
+```
 
 ### Merge only few files from one branch into another
 
