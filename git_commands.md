@@ -35,6 +35,11 @@ So, just `git checkout FROM_BRANCH_NAME path/to/file`
 git log
 git log --oneline
 ```
+
+# How to delete all your local branches but keep master
+```
+git branch | Select-String -NotMatch -Pattern "master" | %{ git branch -D $_.ToString().Trim() }
+```
 ### Apply a Git patch(.diff/.patch file)
 
 ```
