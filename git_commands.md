@@ -36,10 +36,18 @@ git log
 git log --oneline
 ```
 
-# How to delete all your local branches but keep master
+### How to delete all your local branches but keep master
 ```
 git branch | Select-String -NotMatch -Pattern "master" | %{ git branch -D $_.ToString().Trim() }
 ```
+### Git take master to the some old date
+
+SHA will be output of the first command
+``
+git rev-list -1 --before="2020-04-07 12:00" master
+git checkout SHA
+``
+
 ### Apply a Git patch(.diff/.patch file)
 
 ```
