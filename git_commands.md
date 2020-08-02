@@ -5,6 +5,11 @@
 git fetch --all
 git checkout --track origin/users/branch_name
 ```
+### Git checkout a folder/dir
+
+```
+git checkout master -- dirname
+```
 
 ### git move uncommitted changes to existing branch
 
