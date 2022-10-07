@@ -5,6 +5,12 @@
 git fetch --all
 git checkout --track origin/users/branch_name
 ```
+### Undo a commit
+
+```
+git reset --soft HEAD~1
+```
+
 ### Git checkout a folder/dir
 
 ```
